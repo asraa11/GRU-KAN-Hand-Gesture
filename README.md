@@ -46,9 +46,8 @@ The GRU-KAN framework follows a deterministic feed-forward pipeline:
 4. **Multi-Head Attention**: 4 heads (optional, configurable)
 5. **Pooling**: Extracts final hidden state `h_T ∈ ℝ^(B × H)`
 6. **Batch Normalization & Dropout** (rate = 0.3)
-7. **KAN Classifier**: `[H, 64, 32]` with learnable B-spline activations
-8. **Linear Classifier**: Produces logits `∈ ℝ^(B × 7)`
-9. **Softmax**: Final gesture probabilities
+7. **KAN Classifier**: `[H, 64, 32,7]` with learnable B-spline activations
+8. **Softmax**: Final gesture probabilities
 
 ### Architectural Variants
 We evaluate **8 configurations** varying:
@@ -139,11 +138,6 @@ bibtex
   journal={International Journal of Intelligent Engineering and Systems},
   year={2026}
 }
-📧 Contact
-For questions or issues, please contact:
-
-Wisam S. Hacham (Corresponding Author): wisam@kecbu.uobaghdad.edu.iq
-
 Or open an issue on GitHub.
 
 📜 License
