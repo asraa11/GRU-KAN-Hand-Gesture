@@ -13,7 +13,32 @@ This repository contains the official implementation of the paper:
 > **"GRU-KAN: A Hybrid Recurrent–Kolmogorov–Arnold Network for Low-Latency 3D Hand Gesture Classification using Direct Kinematic Features from Skeletal Data"**  
 > *International Journal of Intelligent Engineering and Systems (IJIES), 2026.*
 
-We propose a lightweight framework that combines **Gated Recurrent Units (GRU)** for temporal encoding with **Kolmogorov–Arnold Networks (KAN)** for nonlinear classification. The system processes raw 3D skeletal streams from an Ultraleap IR 170 camera, extracts 14 kinematic descriptors, and achieves state-of-the-art accuracy (87.14% – 90.0%) with low CPU inference latency (55.60 ms).
+We propose a lightweight framework that combines **Gated Recurrent Units (GRU)** for temporal encoding with **Kolmogorov–Arnold Networks (KAN)** for nonlinear classification. The system processes raw 3D skeletal streams from an Ultraleap IR 170 camera, extracts 14 kinematic descriptors, and achieves state-of-the-art accuracy (up to 90.0%, ranging from 87.14% to 90.0% for the best KAN variants) with a low CPU inference latency of 57.06 ms for the best-performing model (att1dir180).
+
+
+
+---
+
+## 📁 Repository Structure & Model Files
+
+The root directory contains exactly **9 model scripts**:
+
+| File Name | Model Variant |
+| :--- | :--- |
+| `att1dir180.py` | GRU-KAN + Attention + Unidirectional + 180 frames |
+| `att1dir360.py` | GRU-KAN + Attention + Unidirectional + 360 frames |
+| `att2dir180.py` | GRU-KAN + Attention + Bidirectional + 180 frames |
+| `att2dir360.py` | GRU-KAN + Attention + Bidirectional + 360 frames |
+| `1dir180.py` | GRU-KAN *without* Attention + Unidirectional + 180 frames |
+| `1dir360.py` | GRU-KAN *without* Attention + Unidirectional + 360 frames |
+| `2dir180.py` | GRU-KAN *without* Attention + Bidirectional + 180 frames |
+| `withoutattention2dir360.py` | GRU-KAN *without* Attention + Bidirectional + 360 frames |
+| `att1dir180mlp.py` | **GRU-MLP** (MLP head instead of KAN) + Attention + Unidirectional + 180 frames *(Baseline)* |
+
+> **Naming Convention**:  
+> - `att` = with Multi-Head Attention, `1dir`/`2dir` = Unidirectional/Bidirectional GRU.  
+> - `180`/`360` = number of frames per sequence (180 uses odd-frame decimation from 360 fps raw data).  
+> - `withoutattention` / no prefix = without Attention mechanism.
 
 ---
 
