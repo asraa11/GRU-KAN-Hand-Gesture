@@ -1,1 +1,6 @@
-hbijb 
+torch>=2.1.0
+numpy>=1.24
+pandas>=1.5
+scikit-learn>=1.2
+pyyaml>=6.0
+tqdm
