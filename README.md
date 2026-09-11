@@ -97,47 +97,25 @@ pip install -r requirements.txt
 The dataset is already provided in the data/ folder. If you wish to use your own data, place your CSV files in data/ with the same 14-feature format.
 
 4. Train a Model
-To train the GRU-KAN model on odd frames (180) with attention:
 
-bash
-python train.py --config configs/att1dir180.yaml
-To train the GRU-MLP baseline (for ablation study):
-
-bash
-python train.py --config configs/gru_mlp.yaml
-5. Evaluate and Measure Latency
-bash
-python evaluate.py --model_path checkpoints/best_model.pth --data_dir data/
-📈 Results Summary
 
 📁 Repository Structure
 text
-.
-├── README.md                 # This file
-├── requirements.txt          # Python dependencies
-├── data/                     # Full dataset (CSV files)
+
+GRU-KAN-Hand-Gesture/
+├── .idea/
+├── __pycache__/
+├── my_hand_data/
 │   ├── open_seq1.csv
 │   ├── close_seq1.csv
 │   └── ...
-├── models/                   # Model definitions
-│   ├── gru_kan.py
-│   ├── gru_mlp.py
-│   └── attention.py
-├── preprocessing/            # Feature extraction & normalization
-│   ├── feature_extractor.py
-│   └── data_loader.py
-├── training/                 # Training scripts
-│   ├── train.py
-│   └── configs/              # YAML configs for 8 variants
-├── evaluation/               # Evaluation & latency measurement
-│   ├── evaluate.py
-│   └── latency_measure.py
-├── splits/                   # Fixed train/val/test indices
-│   └── indices_seed42.npy
-└── checkpoints/              # Pretrained models (optional)
-    └── best_att1dir180.pth
-🛠️ Configuration (config.yaml)
-All hyperparameters are fixed to ensure reproducibility:
+├── results/
+├── test file/
+├── 1dir180.py
+├── 1dir360.py
+├── 2dir180.py
+├── att1dir180.py
+└── README.md
 
 Parameter	Value
 Optimizer	Adam
