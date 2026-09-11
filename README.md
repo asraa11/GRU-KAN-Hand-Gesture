@@ -109,11 +109,6 @@ python train.py --config configs/gru_mlp.yaml
 bash
 python evaluate.py --model_path checkpoints/best_model.pth --data_dir data/
 📈 Results Summary
-Model	Accuracy	Latency (per seq)	Parameters
-GRU-MLP (Baseline)	85.71%	12.77 ms	231,267
-GRU-KAN (att1dir180)	87.14%	55.60 ms	364,291
-GRU-KAN (watt2dir180)	90.0%	88.8 ms	668,252
-Note: All latency values are measured on a CPU-only Intel Core i7-12700K workstation. The reported values correspond to the neural-network inference step after the sequence has been acquired.
 
 📁 Repository Structure
 text
